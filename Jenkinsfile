@@ -15,5 +15,11 @@ pipeline {
         sh 'npm test'
       }
     }
+    stage('Deliver') {
+      steps {
+        sh 'npm run build'
+        echo "App ready to deploy"
+      }
+    }
   }
 }
